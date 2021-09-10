@@ -6,10 +6,16 @@ import com.nasa.nasapicturesviewer.model.NasaPicture;
 import com.nasa.nasapicturesviewer.view.NasaPictureListItemView;
 import com.nasa.nasapicturesviewer.view.ViewMvcFactory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class NasaPictureListAdapter extends RecyclerView.Adapter<NasaPictureListAdapter.MyViewHolder> {
+
+    private List<NasaPicture> nasaPictureList;
+    private ViewMvcFactory viewMvcFactory;
 
     public interface NasaPictureCLickListener {
         void onPictureClicked(NasaPicture nasaPicture);
@@ -27,22 +33,30 @@ public class NasaPictureListAdapter extends RecyclerView.Adapter<NasaPictureList
     }
 
     public NasaPictureListAdapter(NasaPictureCLickListener nasaPictureCLickListener, ViewMvcFactory viewMvcFactory) {
+        this.viewMvcFactory = viewMvcFactory;
+    }
+
+    public void bindPictures(ArrayList<NasaPicture> nasaPicturesList){
+        this.nasaPictureList = nasaPicturesList;
+        notifyDataSetChanged();
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        NasaPictureListItemView nasaPictureListItemView = viewMvcFactory.getNasaPictureListItemView(parent);
+//        nasaPictureListItemView.registerListener(this);
+        return new MyViewHolder(nasaPictureListItemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
+        holder.mViewMvc.bindNasaPicture(nasaPictureList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return nasaPictureList.size();
     }
 
 }

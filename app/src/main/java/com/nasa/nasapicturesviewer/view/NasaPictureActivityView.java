@@ -7,13 +7,15 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.nasa.nasapicturesviewer.R;
+import com.nasa.nasapicturesviewer.adapters.NasaPictureListAdapter;
 import com.nasa.nasapicturesviewer.model.NasaPicture;
 
 import java.util.List;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class NasaPictureActivityView {
+public class NasaPictureActivityView implements NasaPictureListAdapter.NasaPictureCLickListener {
 
     private RecyclerView mRecyclerNasaPictures;
     private FrameLayout recyclerViewHolder;
@@ -30,7 +32,11 @@ public class NasaPictureActivityView {
         gridList.setOnClickListener(v -> switchListView("grid"));
     }
 
-    public void setLinearRecyclerView(List<NasaPicture> nasaPictureList){}
+    public void setLinearRecyclerView(List<NasaPicture> nasaPictureList){
+        RecyclerView recyclerView = new RecyclerView(getRootView().getContext());
+        recyclerView.setLayoutManager(new LinearLayoutManager(getRootView().getContext()));
+        recyclerView.setAdapter(new NasaPictureListAdapter(this, new ViewMvcFactory()));
+    }
 
 
     public void setGridRecyclerView(List<NasaPicture> nasaPictureList){}
@@ -51,5 +57,10 @@ public class NasaPictureActivityView {
 
     public View getRootView() {
         return mRootView;
+    }
+
+    @Override
+    public void onPictureClicked(NasaPicture nasaPicture) {
+
     }
 }

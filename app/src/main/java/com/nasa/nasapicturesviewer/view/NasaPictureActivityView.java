@@ -20,10 +20,10 @@ public class NasaPictureActivityView implements NasaPictureListAdapter.NasaPictu
     private RecyclerView mRecyclerNasaPictures;
     private FrameLayout recyclerViewHolder;
     private ImageView linearList, gridList;
-
+    private ViewMvcFactory viewMvcFactory;
     private View mRootView;
 
-    public NasaPictureActivityView(LayoutInflater inflater, ViewGroup parentViewGroup) {
+    public NasaPictureActivityView(LayoutInflater inflater, ViewGroup parentViewGroup, ViewMvcFactory viewMvcFactory) {
         setRootView(inflater.inflate(R.layout.activity_main, parentViewGroup));
         linearList = mRootView.findViewById(R.id.linear_list);
         gridList = mRootView.findViewById(R.id.grid_list);
@@ -35,7 +35,7 @@ public class NasaPictureActivityView implements NasaPictureListAdapter.NasaPictu
     public void setLinearRecyclerView(List<NasaPicture> nasaPictureList){
         RecyclerView recyclerView = new RecyclerView(getRootView().getContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(getRootView().getContext()));
-        recyclerView.setAdapter(new NasaPictureListAdapter(this, new ViewMvcFactory()));
+        recyclerView.setAdapter(new NasaPictureListAdapter(this, viewMvcFactory));
     }
 
 

@@ -11,7 +11,7 @@ public class ViewMvcFactory {
         this.inflater = inflater;
     }
 
-    public NasaPictureListItemView getNasaPictureListItemView(ViewGroup parent) {
-        return new NasaPictureListItemView(inflater, parent);
+    public NasaPictureListItemView getNasaPictureListItemView(ViewGroup parent, int LIST_ITEM_TYPE) {
+        return new NasaPictureListItemView(inflater, parent, LIST_ITEM_TYPE);
     }
 }

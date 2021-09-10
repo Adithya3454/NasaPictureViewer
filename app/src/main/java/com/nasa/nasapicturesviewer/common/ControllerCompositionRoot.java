@@ -3,13 +3,14 @@ package com.nasa.nasapicturesviewer.common;
 import android.content.Context;
 import android.view.LayoutInflater;
 
+import com.nasa.nasapicturesviewer.data.GetNasaPictureDataContractImpl;
 import com.nasa.nasapicturesviewer.view.ViewMvcFactory;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ControllerCompositionRoot {
 
-    private final ActivityCompositionRoot mActivityCompositionRoot;
+    private ActivityCompositionRoot mActivityCompositionRoot;
 
     public ControllerCompositionRoot(ActivityCompositionRoot activityCompositionRoot) {
         mActivityCompositionRoot = activityCompositionRoot;
@@ -29,6 +30,10 @@ public class ControllerCompositionRoot {
 
     public ViewMvcFactory getViewMvcFactory() {
         return new ViewMvcFactory(getLayoutInflater());
+    }
+
+    public GetNasaPictureDataContractImpl getNasaPictureDataContract(){
+        return mActivityCompositionRoot.getNasaPictureDataContract(getContext());
     }
 
 }

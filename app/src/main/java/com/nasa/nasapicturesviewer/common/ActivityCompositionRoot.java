@@ -1,5 +1,9 @@
 package com.nasa.nasapicturesviewer.common;
 
+import android.content.Context;
+
+import com.nasa.nasapicturesviewer.data.GetNasaPictureDataContractImpl;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ActivityCompositionRoot {
@@ -14,5 +18,9 @@ public class ActivityCompositionRoot {
 
     public AppCompatActivity getActivity() {
         return mActivity;
+    }
+
+    public GetNasaPictureDataContractImpl getNasaPictureDataContract(Context context) {
+        return compositionRoot.getNasaPicturesDataContract(context);
     }
 }

@@ -14,8 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class NasaPictureListAdapter extends RecyclerView.Adapter<NasaPictureListAdapter.MyViewHolder> {
 
+    public static final int LIST_ITEM_LINEAR = 0;
+    public static final int LIST_ITEM_GRID = 1;
+    private int LIST_ITEM_TYPE;
+
     private List<NasaPicture> nasaPictureList;
-    private ViewMvcFactory viewMvcFactory;
+    private final ViewMvcFactory viewMvcFactory;
 
     public interface NasaPictureCLickListener {
         void onPictureClicked(NasaPicture nasaPicture);
@@ -32,8 +36,9 @@ public class NasaPictureListAdapter extends RecyclerView.Adapter<NasaPictureList
 
     }
 
-    public NasaPictureListAdapter(NasaPictureCLickListener nasaPictureCLickListener, ViewMvcFactory viewMvcFactory) {
+    public NasaPictureListAdapter(NasaPictureCLickListener nasaPictureCLickListener, ViewMvcFactory viewMvcFactory, int LIST_ITEM_TYPE) {
         this.viewMvcFactory = viewMvcFactory;
+        this.LIST_ITEM_TYPE = LIST_ITEM_TYPE;
     }
 
     public void bindPictures(ArrayList<NasaPicture> nasaPicturesList){
@@ -44,14 +49,14 @@ public class NasaPictureListAdapter extends RecyclerView.Adapter<NasaPictureList
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        NasaPictureListItemView nasaPictureListItemView = viewMvcFactory.getNasaPictureListItemView(parent);
+        NasaPictureListItemView nasaPictureListItemView = viewMvcFactory.getNasaPictureListItemView(parent, LIST_ITEM_TYPE);
 //        nasaPictureListItemView.registerListener(this);
         return new MyViewHolder(nasaPictureListItemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.mViewMvc.bindNasaPicture(nasaPictureList.get(position));
+        holder.mViewMvc.bindNasaPicture(nasaPictureList.get(position), LIST_ITEM_TYPE);
     }
 
     @Override

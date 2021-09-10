@@ -9,8 +9,9 @@ public class BaseActivity extends AppCompatActivity {
 
     public ActivityCompositionRoot getActivityCompositionRoot() {
         if (mActivityCompositionRoot == null) {
+            NasaApplication nasaApplication = (NasaApplication) getApplication();
             mActivityCompositionRoot = new ActivityCompositionRoot(
-                    ((NasaApplication) getApplication()).getCompositionRoot(),
+                    nasaApplication.getCompositionRoot(),
                     this
             );
         }

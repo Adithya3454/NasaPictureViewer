@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NasaPicturesViewer</string>
+    <string name="no_pictures_available">No pictures available, please try again later!</string>
 </resources>

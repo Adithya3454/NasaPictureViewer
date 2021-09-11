@@ -1,8 +1,11 @@
 package com.nasa.nasapicturesviewer.common;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.nasa.nasapicturesviewer.common.dependencyinjection.ActivityCompositionRoot;
+import com.nasa.nasapicturesviewer.common.dependencyinjection.ControllerCompositionRoot;
 
-public class BaseActivity extends AppCompatActivity {
+import androidx.fragment.app.FragmentActivity;
+
+public class BaseActivity extends FragmentActivity {
 
     private ActivityCompositionRoot mActivityCompositionRoot;
     private ControllerCompositionRoot mControllerCompositionRoot;
@@ -18,7 +21,7 @@ public class BaseActivity extends AppCompatActivity {
         return mActivityCompositionRoot;
     }
 
-    protected ControllerCompositionRoot getCompositionRoot() {
+    public ControllerCompositionRoot getCompositionRoot() {
         if (mControllerCompositionRoot == null) {
             mControllerCompositionRoot = new ControllerCompositionRoot(getActivityCompositionRoot());
         }

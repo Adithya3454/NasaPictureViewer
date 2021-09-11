@@ -3,8 +3,9 @@ package com.nasa.nasapicturesviewer.adapters;
 import android.view.ViewGroup;
 
 import com.nasa.nasapicturesviewer.model.NasaPicture;
-import com.nasa.nasapicturesviewer.view.NasaPictureListItemView;
-import com.nasa.nasapicturesviewer.view.ViewMvcFactory;
+import com.nasa.nasapicturesviewer.view.List.NasaPictureListItemViewMvcImpl;
+import com.nasa.nasapicturesviewer.common.views.ViewMvcFactory;
+import com.nasa.nasapicturesviewer.view.List.NasaPictureListViewMvc;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,28 +21,26 @@ public class NasaPictureListAdapter extends RecyclerView.Adapter<NasaPictureList
 
     private List<NasaPicture> nasaPictureList;
     private final ViewMvcFactory viewMvcFactory;
-
-    public interface NasaPictureCLickListener {
-        void onPictureClicked(NasaPicture nasaPicture);
-    }
+    private NasaPictureListViewMvc.NasaPictureCLickListener nasaPictureClickListener;
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private final NasaPictureListItemView mViewMvc;
+        private final NasaPictureListItemViewMvcImpl mViewMvc;
 
-        public MyViewHolder(NasaPictureListItemView viewMvc) {
+        public MyViewHolder(NasaPictureListItemViewMvcImpl viewMvc) {
             super(viewMvc.getRootView());
             mViewMvc = viewMvc;
         }
 
     }
 
-    public NasaPictureListAdapter(NasaPictureCLickListener nasaPictureCLickListener, ViewMvcFactory viewMvcFactory, int LIST_ITEM_TYPE) {
+    public NasaPictureListAdapter(ViewMvcFactory viewMvcFactory, NasaPictureListViewMvc.NasaPictureCLickListener nasaPictureClickListener, int LIST_ITEM_TYPE) {
+        this.nasaPictureClickListener = nasaPictureClickListener;
         this.viewMvcFactory = viewMvcFactory;
         this.LIST_ITEM_TYPE = LIST_ITEM_TYPE;
     }
 
-    public void bindPictures(ArrayList<NasaPicture> nasaPicturesList){
+    public void bindPictures(ArrayList<NasaPicture> nasaPicturesList) {
         this.nasaPictureList = nasaPicturesList;
         notifyDataSetChanged();
     }
@@ -49,9 +48,9 @@ public class NasaPictureListAdapter extends RecyclerView.Adapter<NasaPictureList
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        NasaPictureListItemView nasaPictureListItemView = viewMvcFactory.getNasaPictureListItemView(parent, LIST_ITEM_TYPE);
-//        nasaPictureListItemView.registerListener(this);
-        return new MyViewHolder(nasaPictureListItemView);
+        NasaPictureListItemViewMvcImpl nasaPictureListItemViewMvcImpl = viewMvcFactory.getNasaPictureListItemView(parent, LIST_ITEM_TYPE);
+        nasaPictureListItemViewMvcImpl.registerListener(nasaPictureClickListener);
+        return new MyViewHolder(nasaPictureListItemViewMvcImpl);
     }
 
     @Override

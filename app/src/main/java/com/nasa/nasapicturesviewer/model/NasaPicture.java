@@ -1,8 +1,12 @@
 package com.nasa.nasapicturesviewer.model;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * A class to hold a Nasa picture and it's details.
  */
-public class NasaPicture {
+public class NasaPicture implements Parcelable {
 
     private String copyright;
     private String date;
@@ -112,4 +116,45 @@ public class NasaPicture {
                 ", url='" + url + '\'' +
                 '}';
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(copyright);
+        dest.writeString(date);
+        dest.writeString(explanation);
+        dest.writeString(hdurl);
+        dest.writeString(media_type);
+        dest.writeString(service_version);
+        dest.writeString(title);
+        dest.writeString(url);
+    }
+
+    protected NasaPicture(Parcel in) {
+        copyright = in.readString();
+        date = in.readString();
+        explanation = in.readString();
+        hdurl = in.readString();
+        media_type = in.readString();
+        service_version = in.readString();
+        title = in.readString();
+        url = in.readString();
+    }
+
+    public static final Creator<NasaPicture> CREATOR = new Creator<NasaPicture>() {
+        @Override
+        public NasaPicture createFromParcel(Parcel in) {
+            return new NasaPicture(in);
+        }
+
+        @Override
+        public NasaPicture[] newArray(int size) {
+            return new NasaPicture[size];
+        }
+    };
+
 }

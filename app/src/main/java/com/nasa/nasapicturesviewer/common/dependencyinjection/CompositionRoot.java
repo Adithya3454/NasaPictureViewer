@@ -1,4 +1,4 @@
-package com.nasa.nasapicturesviewer.common;
+package com.nasa.nasapicturesviewer.common.dependencyinjection;
 
 import android.content.Context;
 

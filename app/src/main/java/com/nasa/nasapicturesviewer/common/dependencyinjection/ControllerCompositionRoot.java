@@ -1,12 +1,12 @@
-package com.nasa.nasapicturesviewer.common;
+package com.nasa.nasapicturesviewer.common.dependencyinjection;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 
+import com.nasa.nasapicturesviewer.common.views.ViewMvcFactory;
 import com.nasa.nasapicturesviewer.data.GetNasaPictureDataContractImpl;
-import com.nasa.nasapicturesviewer.view.ViewMvcFactory;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
 public class ControllerCompositionRoot {
 
@@ -16,7 +16,7 @@ public class ControllerCompositionRoot {
         mActivityCompositionRoot = activityCompositionRoot;
     }
 
-    private AppCompatActivity getActivity() {
+    private FragmentActivity getActivity() {
         return mActivityCompositionRoot.getActivity();
     }
 

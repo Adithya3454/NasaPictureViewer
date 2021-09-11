@@ -14,7 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NasaPicturesViewer">
         <activity
-            android:name="com.nasa.nasapicturesviewer.MainActivity"
+            android:name=".view.Detail.NasaPictureDetailParentFragment"
+            android:exported="true" />
+        <activity
+            android:name=".view.List.NasaPictureListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

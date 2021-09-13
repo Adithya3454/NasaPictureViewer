@@ -3,8 +3,6 @@ package com.nasa.nasapicturesviewer.view.Detail;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.os.Parcelable;
 
 import com.nasa.nasapicturesviewer.common.BaseActivity;
@@ -18,7 +16,6 @@ import androidx.annotation.Nullable;
 
 public class NasaPictureDetailActivity extends BaseActivity {
 
-    private final Handler mHandler = new Handler(Looper.getMainLooper());
     private NasaPictureDetailsViewController nasaPictureDetailsViewController;
 
     public static void start(Context context, int selectedPictureIndex, List<NasaPicture> nasaPictureList) {

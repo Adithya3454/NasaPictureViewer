@@ -17,6 +17,7 @@
         android:orientation="vertical">
 
         <TextView
+            style="@style/heading"
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,6 +35,7 @@
             android:contentDescription="@string/image_nasa" />
 
         <TextView
+            style="@style/description"
             android:id="@+id/explanation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,6 +43,7 @@
             />
 
         <TextView
+            style="@style/regular"
             android:id="@+id/copyright"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,6 +51,7 @@
             />
 
         <TextView
+            style="@style/regular"
             android:id="@+id/date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

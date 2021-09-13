@@ -13,6 +13,7 @@ import com.nasa.nasapicturesviewer.model.NasaPicture;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,14 +24,16 @@ public class NasaPictureListActivityView extends BaseViewMvc {
     private final NasaPictureListViewMvc.NasaPictureCLickListener nasaPictureCLickListener;
     private final RecyclerView mRecyclerNasaPictures;
     private final ViewMvcFactory viewMvcFactory;
+    private final ImageView linearList;
+    private final ImageView gridList;
     private List<NasaPicture> nasaPictureList;
 
     public NasaPictureListActivityView(LayoutInflater inflater, ViewGroup parentViewGroup, ViewMvcFactory viewMvcFactory, NasaPictureListViewMvc.NasaPictureCLickListener nasaPictureCLickListener) {
         this.viewMvcFactory = viewMvcFactory;
         this.nasaPictureCLickListener = nasaPictureCLickListener;
         setRootView(inflater.inflate(R.layout.activity_main, parentViewGroup, false));
-        ImageView linearList = getRootView().findViewById(R.id.linear_list);
-        ImageView gridList = getRootView().findViewById(R.id.grid_list);
+        linearList = getRootView().findViewById(R.id.linear_list);
+        gridList = getRootView().findViewById(R.id.grid_list);
         mRecyclerNasaPictures = getRootView().findViewById(R.id.recycler_view);
         linearList.setOnClickListener(v -> switchListView("linear"));
         gridList.setOnClickListener(v -> switchListView("grid"));
@@ -42,6 +45,8 @@ public class NasaPictureListActivityView extends BaseViewMvc {
         NasaPictureListAdapter nasaPictureListAdapter = new NasaPictureListAdapter(viewMvcFactory, nasaPictureCLickListener,NasaPictureListAdapter.LIST_ITEM_LINEAR);
         mRecyclerNasaPictures.setAdapter(nasaPictureListAdapter);
         nasaPictureListAdapter.bindPictures((ArrayList<NasaPicture>) nasaPictureList);
+        linearList.setBackground(AppCompatResources.getDrawable(getContext(), R.drawable.selected_list_style_background));
+        gridList.setBackground(null);
     }
 
 
@@ -51,6 +56,8 @@ public class NasaPictureListActivityView extends BaseViewMvc {
         NasaPictureListAdapter nasaPictureListAdapter = new NasaPictureListAdapter(viewMvcFactory, nasaPictureCLickListener, NasaPictureListAdapter.LIST_ITEM_GRID);
         mRecyclerNasaPictures.setAdapter(nasaPictureListAdapter);
         nasaPictureListAdapter.bindPictures((ArrayList<NasaPicture>) nasaPictureList);
+        gridList.setBackground(AppCompatResources.getDrawable(getContext(), R.drawable.selected_list_style_background));
+        linearList.setBackground(null);
     }
 
 

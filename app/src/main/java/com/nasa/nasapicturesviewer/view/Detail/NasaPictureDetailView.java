@@ -50,7 +50,7 @@ public class NasaPictureDetailView extends BaseViewMvc {
             getContext().startActivity(browserIntent);
         });
 
-        Picasso.get().load(nasaPicture.getHdurl()).fit().into(image);
+        Picasso.get().load(nasaPicture.getHdurl()).placeholder(R.drawable.ic_nasa).fit().into(image);
     }
 
 }

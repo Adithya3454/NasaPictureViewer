@@ -11,8 +11,6 @@ import com.nasa.nasapicturesviewer.common.views.BaseObservableViewMvc;
 import com.nasa.nasapicturesviewer.model.NasaPicture;
 import com.squareup.picasso.Picasso;
 
-import androidx.core.view.ViewCompat;
-
 import static com.nasa.nasapicturesviewer.adapters.NasaPictureListAdapter.LIST_ITEM_GRID;
 
 public class NasaPictureListItemViewMvcImpl extends BaseObservableViewMvc<NasaPictureListViewMvc.NasaPictureCLickListener>
@@ -46,12 +44,13 @@ public class NasaPictureListItemViewMvcImpl extends BaseObservableViewMvc<NasaPi
         this.nasaPicture = nasaPicture;
         titleTextView.setText(nasaPicture.getTitle());
         descriptionTextView.setText(nasaPicture.getExplanation());
-        ViewCompat.setTransitionName(imageView, nasaPicture.getUrl());
+
         if (LIST_ITEM_TYPE == LIST_ITEM_GRID) {
             titleTextView.setVisibility(View.GONE);
             descriptionTextView.setVisibility(View.GONE);
         }
-        Picasso.get().load(nasaPicture.getUrl()).into(imageView);
+
+        Picasso.get().load(nasaPicture.getUrl()).placeholder(R.drawable.ic_nasa).into(imageView);
         getRootView().setOnClickListener(view -> {
             for (NasaPictureCLickListener listener : getListeners()) {
                 listener.onPictureClicked(nasaPicture, imageView);

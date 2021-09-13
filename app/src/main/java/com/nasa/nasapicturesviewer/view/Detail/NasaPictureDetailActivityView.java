@@ -23,11 +23,9 @@ public class NasaPictureDetailActivityView extends BaseViewMvc {
         nasaPictureViewPager = findViewById(R.id.nasa_pictures_viewpager);
     }
 
-    public void showNasaPictureViewPager(FragmentActivity fragmentActivity,  List<NasaPicture> nasaPictureList){
-//        Log.i(LOG_TAG, "current nasa picture: "+currentNasaPicture.toString());
-//        Log.i(LOG_TAG, "index of selected picture: "+indexOfCurrentNasaPicture);
+    public void showNasaPictureViewPager(FragmentActivity fragmentActivity,  List<NasaPicture> nasaPictureList, int selectedNasaPictureIndex){
         nasaPictureViewPager.setAdapter(new NasaPicturesDetailViewPagerAdapter(fragmentActivity, nasaPictureList));
-        nasaPictureViewPager.setCurrentItem(0);
+        nasaPictureViewPager.setCurrentItem(selectedNasaPictureIndex);
     }
 
 }

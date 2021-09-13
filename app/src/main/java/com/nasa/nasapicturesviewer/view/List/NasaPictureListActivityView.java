@@ -1,7 +1,6 @@
 package com.nasa.nasapicturesviewer.view.List;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
@@ -24,16 +23,14 @@ public class NasaPictureListActivityView extends BaseViewMvc {
     private final NasaPictureListViewMvc.NasaPictureCLickListener nasaPictureCLickListener;
     private final RecyclerView mRecyclerNasaPictures;
     private final ViewMvcFactory viewMvcFactory;
-    private final ImageView linearList;
-    private final ImageView gridList;
     private List<NasaPicture> nasaPictureList;
 
     public NasaPictureListActivityView(LayoutInflater inflater, ViewGroup parentViewGroup, ViewMvcFactory viewMvcFactory, NasaPictureListViewMvc.NasaPictureCLickListener nasaPictureCLickListener) {
         this.viewMvcFactory = viewMvcFactory;
         this.nasaPictureCLickListener = nasaPictureCLickListener;
         setRootView(inflater.inflate(R.layout.activity_main, parentViewGroup, false));
-         linearList = getRootView().findViewById(R.id.linear_list);
-         gridList = getRootView().findViewById(R.id.grid_list);
+        ImageView linearList = getRootView().findViewById(R.id.linear_list);
+        ImageView gridList = getRootView().findViewById(R.id.grid_list);
         mRecyclerNasaPictures = getRootView().findViewById(R.id.recycler_view);
         linearList.setOnClickListener(v -> switchListView("linear"));
         gridList.setOnClickListener(v -> switchListView("grid"));
@@ -66,12 +63,5 @@ public class NasaPictureListActivityView extends BaseViewMvc {
                 setGridRecyclerView(nasaPictureList);
                 break;
         }
-    }
-
-    public void prepareViewForFragmentChange() {
-        ViewGroup fragmentHolder = getRootView().findViewById(R.id.fragment_container);
-        fragmentHolder.removeAllViews();
-        linearList.setVisibility(View.GONE);
-        gridList.setVisibility(View.GONE);
     }
 }

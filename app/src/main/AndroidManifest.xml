@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NasaPicturesViewer">
         <activity
-            android:name=".view.Detail.NasaPictureDetailParentFragment"
+            android:name=".view.Detail.NasaPictureDetailActivity"
             android:exported="true" />
         <activity
             android:name=".view.List.NasaPictureListActivity"

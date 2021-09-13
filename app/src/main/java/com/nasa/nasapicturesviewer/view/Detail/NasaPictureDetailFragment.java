@@ -1,24 +1,16 @@
 package com.nasa.nasapicturesviewer.view.Detail;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.nasa.nasapicturesviewer.R;
 import com.nasa.nasapicturesviewer.common.BaseActivity;
 import com.nasa.nasapicturesviewer.model.NasaPicture;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
-import androidx.transition.TransitionInflater;
 
 import static com.nasa.nasapicturesviewer.common.Constants.NASA_PICTURE;
 
@@ -60,8 +52,6 @@ public class NasaPictureDetailFragment extends Fragment {
         if (getArguments() != null) {
             nasaPicture = getArguments().getParcelable(NASA_PICTURE);
         }
-        postponeEnterTransition();
-        setSharedElementEnterTransition(TransitionInflater.from(getContext()).inflateTransition(android.R.transition.move));
     }
 
     @Override
@@ -77,28 +67,6 @@ public class NasaPictureDetailFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         nasaPictureDetailView.bindNasaPictureDetailView(nasaPicture);
-        ImageView imageView = nasaPictureDetailView.getRootView().findViewById(R.id.image);
-        TextView textView = nasaPictureDetailView.getRootView().findViewById(R.id.explanation);
-
-        Log.i(LOG_TAG, "tranistion name: "+nasaPicture.getUrl());
-        ViewCompat.setTransitionName(imageView, nasaPicture.getUrl());
-
-        Picasso.get()
-                .load(nasaPicture.getUrl())
-                .noFade()
-                .into(imageView, new Callback() {
-                    @Override
-                    public void onSuccess() {
-                        Log.i("download", "image downloaded");
-                        startPostponedEnterTransition();
-                    }
-
-                    @Override
-                    public void onError(Exception e) {
-                        Log.i("download", "download failed");
-                        startPostponedEnterTransition();
-                    }
-                });
     }
 
 

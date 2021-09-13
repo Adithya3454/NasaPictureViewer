@@ -19,4 +19,5 @@ public class Constants {
     public static final String SELECTED_PICTURE = "SELECTED_PICTURE";
     public static final String NASA_PICTURE = "NASA_PICTURE";
     public static final String IMAGE_TRANSITION_NAME = "IMAGE_TRANSITION_NAME";
+    public static final String SELECTED_PICTURE_INDEX = "SELECTED_PICTURE_INDEX";
 }

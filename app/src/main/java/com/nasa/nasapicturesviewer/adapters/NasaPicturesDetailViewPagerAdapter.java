@@ -12,7 +12,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class NasaPicturesDetailViewPagerAdapter extends FragmentStateAdapter {
 
-    private List<NasaPicture> nasaPicturesList;
+    private final List<NasaPicture> nasaPicturesList;
 
     public NasaPicturesDetailViewPagerAdapter(@NonNull FragmentActivity fragmentActivity, List<NasaPicture> nasaPicturesList) {
         super(fragmentActivity);

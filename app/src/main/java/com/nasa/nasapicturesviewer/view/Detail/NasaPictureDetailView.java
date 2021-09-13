@@ -11,16 +11,17 @@ import android.widget.TextView;
 import com.nasa.nasapicturesviewer.R;
 import com.nasa.nasapicturesviewer.common.views.BaseViewMvc;
 import com.nasa.nasapicturesviewer.model.NasaPicture;
+import com.squareup.picasso.Picasso;
 
 public class NasaPictureDetailView extends BaseViewMvc {
 
-    private TextView title;
-    private TextView explanation;
-    private TextView copyright;
-    private TextView date;
-    private TextView url;
-    private TextView hdurl;
-    private ImageView image;
+    private final TextView title;
+    private final TextView explanation;
+    private final TextView copyright;
+    private final TextView date;
+    private final TextView url;
+    private final TextView hdurl;
+    private final ImageView image;
 
     public NasaPictureDetailView(LayoutInflater inflater, ViewGroup parentViewGroup) {
         setRootView(inflater.inflate(R.layout.fragment_nasa_picture_detail, parentViewGroup, false));
@@ -49,7 +50,7 @@ public class NasaPictureDetailView extends BaseViewMvc {
             getContext().startActivity(browserIntent);
         });
 
-//        Picasso.get().load(nasaPicture.getHdurl()).fit().into(image);
+        Picasso.get().load(nasaPicture.getHdurl()).fit().into(image);
     }
 
 }

@@ -136,7 +136,7 @@ public class GetNasaPictureDataContractImpl implements NasaPicturesDataContract 
      * @param nasaPictureList a list of pictures to be sorted
      * @return a ist of sorted pictures
      */
-    private List<NasaPicture> sortNasaPicturesByMostRecentDate(List<NasaPicture> nasaPictureList){
+    public List<NasaPicture> sortNasaPicturesByMostRecentDate(List<NasaPicture> nasaPictureList){
         final DateFormat nasaPictureDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Collections.sort(nasaPictureList, new Comparator<NasaPicture>() {
             @Override

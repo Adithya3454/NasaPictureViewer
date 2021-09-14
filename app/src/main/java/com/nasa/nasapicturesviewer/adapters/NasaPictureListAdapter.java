@@ -17,7 +17,7 @@ public class NasaPictureListAdapter extends RecyclerView.Adapter<NasaPictureList
 
     public static final int LIST_ITEM_LINEAR = 0;
     public static final int LIST_ITEM_GRID = 1;
-    private int LIST_ITEM_TYPE;
+    private final int LIST_ITEM_TYPE;
 
     private List<NasaPicture> nasaPictureList;
     private final ViewMvcFactory viewMvcFactory;

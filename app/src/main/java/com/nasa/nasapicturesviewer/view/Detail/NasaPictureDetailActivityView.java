@@ -5,6 +5,7 @@ import android.view.ViewGroup;
 
 import com.nasa.nasapicturesviewer.R;
 import com.nasa.nasapicturesviewer.adapters.NasaPicturesDetailViewPagerAdapter;
+import com.nasa.nasapicturesviewer.common.animation.ZoomOutPageTransformer;
 import com.nasa.nasapicturesviewer.common.views.BaseViewMvc;
 import com.nasa.nasapicturesviewer.model.NasaPicture;
 
@@ -21,6 +22,7 @@ public class NasaPictureDetailActivityView extends BaseViewMvc {
     public NasaPictureDetailActivityView(LayoutInflater inflater, ViewGroup parentViewGroup) {
         setRootView(inflater.inflate(R.layout.activity_nasa_picture_detail, parentViewGroup, false));
         nasaPictureViewPager = findViewById(R.id.nasa_pictures_viewpager);
+        nasaPictureViewPager.setPageTransformer(new ZoomOutPageTransformer());
     }
 
     public void showNasaPictureViewPager(FragmentActivity fragmentActivity,  List<NasaPicture> nasaPictureList, int selectedNasaPictureIndex){

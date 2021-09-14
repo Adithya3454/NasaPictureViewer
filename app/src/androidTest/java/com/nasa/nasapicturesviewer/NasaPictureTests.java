@@ -69,6 +69,9 @@ public class NasaPictureTests {
         nasaPictureList.getPicturesForNasaGallery(loadingFinishedListener);
     }
 
+    /**
+     * Check if sort method is sorting the dates in the latest first order
+     */
     @Test
     public void checkIfNasaPicturesListIsSorted() {
         // Context of the app under test.
@@ -117,7 +120,6 @@ public class NasaPictureTests {
     @Test
     public void checkIfNasaPicturesClickIsFunctioning() {
         onView(withId(R.id.recycler_view)).perform(click());
-
         intended(hasComponent(NasaPictureDetailActivity.class.getName()));
     }
 

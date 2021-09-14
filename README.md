@@ -2,17 +2,17 @@
 Nasapicturesviewer app has a list of interesting pictures from NASA, The app gives you details of an image and shows you a high definition picture.
 
 ## Screenshots
-[<img src="/gallery_list.png" align="center"
+[<img src="/gallery_list.jpeg" align="center"
 width="200"
-    hspace="10" vspace="10">](/gallery_list.png)
+    hspace="10" vspace="10">](/gallery_list.jpeg)
     
-[<img src="/gallery_grid.png" align="center"
+[<img src="/gallery_grid.jpeg" align="center"
 width="200"
-    hspace="10" vspace="10">](/gallery_grid.png)
+    hspace="10" vspace="10">](/gallery_grid.jpeg)
 
-[<img src="/image_detail.png" align="center"
+[<img src="/image_detail.jpeg" align="center"
 width="200"
-    hspace="10" vspace="10">](/image_detail.png)
+    hspace="10" vspace="10">](/image_detail.jpeg)
 
 ## Permissions
 

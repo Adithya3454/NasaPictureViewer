@@ -14,6 +14,9 @@ import java.util.List;
 
 import androidx.annotation.Nullable;
 
+/**
+ * Activity that displays details of a picture.
+ */
 public class NasaPictureDetailActivity extends BaseActivity {
 
     private NasaPictureDetailsViewController nasaPictureDetailsViewController;

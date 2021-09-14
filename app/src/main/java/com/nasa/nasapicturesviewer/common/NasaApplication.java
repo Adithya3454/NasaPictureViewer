@@ -4,6 +4,9 @@ import android.app.Application;
 
 import com.nasa.nasapicturesviewer.common.dependencyinjection.CompositionRoot;
 
+/**
+ * Application class extended to initialise the dependency injection class
+ */
 public class NasaApplication extends Application {
     private CompositionRoot mCompositionRoot;
 

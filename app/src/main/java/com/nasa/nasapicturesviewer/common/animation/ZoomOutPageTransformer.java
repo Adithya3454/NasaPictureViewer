@@ -5,6 +5,9 @@ import android.view.View;
 
 import androidx.viewpager2.widget.ViewPager2;
 
+/**
+ * Zoom out animation for view pager
+ */
 public class ZoomOutPageTransformer implements ViewPager2.PageTransformer {
     private static final float MIN_SCALE = 0.85f;
     private static final float MIN_ALPHA = 0.5f;

@@ -15,9 +15,7 @@ import androidx.fragment.app.Fragment;
 import static com.nasa.nasapicturesviewer.common.Constants.NASA_PICTURE;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link NasaPictureDetailFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Fragment that displays all the details of a picture
  */
 public class NasaPictureDetailFragment extends Fragment {
 
@@ -32,9 +30,9 @@ public class NasaPictureDetailFragment extends Fragment {
 
     /**
      * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
+     * this fragment.
      *
-     * @param nasaPicture Parameter 1.
+     * @param nasaPicture details of the picture to be displayed.
      * @return A new instance of fragment NasaPictureDetailFragment.
      */
     // TODO: Rename and change types and number of parameters

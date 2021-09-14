@@ -5,6 +5,9 @@ import android.view.View;
 
 import androidx.annotation.StringRes;
 
+/**
+ * Base class that provides all the necessary methods for a view
+ */
 public abstract class BaseViewMvc implements ViewMvc {
 
     private View mRootView;

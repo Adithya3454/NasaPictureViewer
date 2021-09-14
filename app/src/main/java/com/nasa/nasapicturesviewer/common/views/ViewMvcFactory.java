@@ -9,6 +9,9 @@ import com.nasa.nasapicturesviewer.view.List.NasaPictureListActivityView;
 import com.nasa.nasapicturesviewer.view.List.NasaPictureListItemViewMvcImpl;
 import com.nasa.nasapicturesviewer.view.List.NasaPictureListViewMvc;
 
+/**
+ * Factory class for getting all the views.
+ */
 public class ViewMvcFactory {
 
     private final LayoutInflater inflater;

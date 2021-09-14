@@ -13,6 +13,9 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+/**
+ * Adapter for displaying all nasa pictures
+ */
 public class NasaPictureListAdapter extends RecyclerView.Adapter<NasaPictureListAdapter.MyViewHolder> {
 
     public static final int LIST_ITEM_LINEAR = 0;

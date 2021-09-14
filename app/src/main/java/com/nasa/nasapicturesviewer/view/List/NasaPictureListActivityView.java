@@ -18,6 +18,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+/**
+ * View for Activity (NasaPictureActivity) that displays all pictures
+ */
 public class NasaPictureListActivityView extends BaseViewMvc {
 
     private static final String LOG_TAG = NasaPictureListActivityView.class.getSimpleName();
@@ -39,6 +42,10 @@ public class NasaPictureListActivityView extends BaseViewMvc {
         gridList.setOnClickListener(v -> switchListView("grid"));
     }
 
+    /**
+     * Shows a linear recycler view
+     * @param nasaPictureList a list iof pictures to be displayed
+     */
     public void setLinearRecyclerView(List<NasaPicture> nasaPictureList) {
         this.nasaPictureList = nasaPictureList;
         mRecyclerNasaPictures.setLayoutManager(new LinearLayoutManager(getRootView().getContext()));
@@ -50,6 +57,10 @@ public class NasaPictureListActivityView extends BaseViewMvc {
     }
 
 
+    /**
+     * Shows a grid recycler view
+     * @param nasaPictureList a list iof pictures to be displayed
+     */
     public void setGridRecyclerView(List<NasaPicture> nasaPictureList) {
         this.nasaPictureList = nasaPictureList;
         mRecyclerNasaPictures.setLayoutManager(new GridLayoutManager(getRootView().getContext(), 3));
@@ -61,6 +72,10 @@ public class NasaPictureListActivityView extends BaseViewMvc {
     }
 
 
+    /**
+     * Switch the list style
+     * @param listStyle select between linear and grid style recycler view
+     */
     private void switchListView(String listStyle) {
         switch (listStyle) {
             case "linear":

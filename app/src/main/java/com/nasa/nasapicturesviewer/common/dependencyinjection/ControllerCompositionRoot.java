@@ -11,6 +11,9 @@ import com.nasa.nasapicturesviewer.view.List.NasaPictureListController;
 
 import androidx.fragment.app.FragmentActivity;
 
+/**
+ *  Class for getting instances of other classes
+ */
 public class ControllerCompositionRoot {
 
     private final ActivityCompositionRoot mActivityCompositionRoot;

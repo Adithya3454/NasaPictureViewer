@@ -13,6 +13,9 @@ import com.nasa.nasapicturesviewer.common.views.BaseViewMvc;
 import com.nasa.nasapicturesviewer.model.NasaPicture;
 import com.squareup.picasso.Picasso;
 
+/**
+ * View that displays all the details of a picture
+ */
 public class NasaPictureDetailView extends BaseViewMvc {
 
     private final TextView title;
@@ -34,6 +37,10 @@ public class NasaPictureDetailView extends BaseViewMvc {
         image = findViewById(R.id.image);
     }
 
+    /**
+     * Bind the picture data to the view
+     * @param nasaPicture details of the picture
+     */
     public void bindNasaPictureDetailView(NasaPicture nasaPicture) {
         title.setText(nasaPicture.getTitle());
         explanation.setText("Explanation" + "\n" + nasaPicture.getExplanation());

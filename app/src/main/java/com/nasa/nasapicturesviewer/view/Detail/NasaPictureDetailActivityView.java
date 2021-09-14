@@ -14,6 +14,9 @@ import java.util.List;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+/**
+ * View for Activity (NasaPictureDetailActivity) that displays the details of a picture
+ */
 public class NasaPictureDetailActivityView extends BaseViewMvc {
 
     private final ViewPager2 nasaPictureViewPager;

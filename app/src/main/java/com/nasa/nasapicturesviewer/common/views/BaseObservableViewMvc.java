@@ -4,6 +4,9 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Base class that provides all the necessary methods for a view and methods to register and unregister listeners
+ */
 public abstract class BaseObservableViewMvc<ListenerType> extends BaseViewMvc
         implements ObservableViewMvc<ListenerType> {
 

@@ -7,6 +7,9 @@ import com.nasa.nasapicturesviewer.view.Detail.NasaPictureDetailActivity;
 
 import java.util.List;
 
+/**
+ * Class that helps in navigating activities.
+ */
 public class ScreensNavigator {
 
     private final Context mContext;

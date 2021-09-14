@@ -11,6 +11,9 @@ import com.nasa.nasapicturesviewer.model.NasaPicture;
 
 import java.util.List;
 
+/**
+ * Controller for Activity (NasaPictureActivity) that displays all pictures
+ */
 public class NasaPictureListController implements
         NasaPicturesDataContract.NasaPicturesLoadingFinishedListener,
         NasaPictureListViewMvc.NasaPictureCLickListener {

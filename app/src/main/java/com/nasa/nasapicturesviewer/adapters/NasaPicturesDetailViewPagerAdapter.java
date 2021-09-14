@@ -10,6 +10,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+/**
+ * View pager that allows to swipe between fragments
+ */
 public class NasaPicturesDetailViewPagerAdapter extends FragmentStateAdapter {
 
     private final List<NasaPicture> nasaPicturesList;

@@ -6,6 +6,9 @@ import java.util.List;
 
 import androidx.fragment.app.FragmentActivity;
 
+/**
+ * Controller for Activity (NasaPictureDetailsActivity) that displays all details of a picture
+ */
 public class NasaPictureDetailsViewController {
 
     private NasaPictureDetailActivityView nasaPictureDetailActivityView;

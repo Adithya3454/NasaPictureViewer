@@ -4,6 +4,9 @@ import android.os.Bundle;
 
 import com.nasa.nasapicturesviewer.common.BaseActivity;
 
+/**
+ * Activity that displays all the pictures.
+ */
 public class NasaPictureListActivity extends BaseActivity {
 
     private static final String LOG_TAG = NasaPictureListActivity.class.getSimpleName();

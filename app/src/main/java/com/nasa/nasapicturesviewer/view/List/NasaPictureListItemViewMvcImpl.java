@@ -12,7 +12,9 @@ import com.nasa.nasapicturesviewer.model.NasaPicture;
 import com.squareup.picasso.Picasso;
 
 import static com.nasa.nasapicturesviewer.adapters.NasaPictureListAdapter.LIST_ITEM_GRID;
-
+/**
+ * View for list item that displays pictures/ detaols of the picture depending on the list item type
+ */
 public class NasaPictureListItemViewMvcImpl extends BaseObservableViewMvc<NasaPictureListViewMvc.NasaPictureCLickListener>
         implements NasaPictureListViewMvc {
 
@@ -38,7 +40,11 @@ public class NasaPictureListItemViewMvcImpl extends BaseObservableViewMvc<NasaPi
         });
     }
 
-
+    /**
+     * Binds the list item in recyclerview with data
+     * @param nasaPicture picture whose details have to be shown
+     * @param LIST_ITEM_TYPE type of the list item
+     */
     @Override
     public void bindNasaPicture(NasaPicture nasaPicture, int LIST_ITEM_TYPE) {
         this.nasaPicture = nasaPicture;

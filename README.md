@@ -16,7 +16,7 @@ width="200"
 
 ## Permissions
 
-On Android versions prior to Android 6.0, Nasapicturesviewer app requires the following permissions:
+Nasapicturesviewer app requires the following permissions:
 - Full Network Access.
 
 # Libraries this app uses:

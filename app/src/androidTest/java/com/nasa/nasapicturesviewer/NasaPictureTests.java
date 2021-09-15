@@ -5,10 +5,7 @@ import android.content.Context;
 import com.nasa.nasapicturesviewer.data.GetNasaPictureDataContractImpl;
 import com.nasa.nasapicturesviewer.data.NasaPicturesDataContract;
 import com.nasa.nasapicturesviewer.model.NasaPicture;
-import com.nasa.nasapicturesviewer.view.Detail.NasaPictureDetailActivity;
-import com.nasa.nasapicturesviewer.view.List.NasaPictureListActivity;
 
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -17,16 +14,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Locale;
 
-import androidx.test.espresso.action.ViewActions;
-import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
 
-import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.intent.Intents.intended;
-import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -110,13 +100,14 @@ public class NasaPictureTests {
 
     }
 
+    /*
     @Rule
     public ActivityScenarioRule<NasaPictureListActivity> activityListRule
             = new ActivityScenarioRule<>(NasaPictureListActivity.class);
 
-    /**
+
      * Check if detail picture activity is opening detail activity
-     */
+
     @Test
     public void checkIfNasaPicturesClickIsFunctioning() {
         onView(withId(R.id.recycler_view)).perform(click());
@@ -129,11 +120,12 @@ public class NasaPictureTests {
             = new ActivityScenarioRule<>(NasaPictureDetailActivity.class);
     /**
      * Check if detail picture activity is swiping
-     */
+
     @Test
     public void checkIfViewPagerIsWorking() {
         onView(withId(R.id.nasa_pictures_viewpager)).perform(ViewActions.swipeRight());
         intended(hasComponent(NasaPictureDetailActivity.class.getName()));
     }
+    */
 
 }
